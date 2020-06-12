@@ -46,3 +46,21 @@ body {
 
 2.下载axios
 npm -i axios -S
+
+3.制作插件
+3.1 在插件文件中加入src/plugins/installer.js
+// vue插件必须具备Install函数
+function Installer () {
+    // 自身初始化行为
+}
+
+Installer.install = function(Vue) {
+    console.log('plugins');
+};
+
+export default Installer;
+
+3.2在main.js中声明
+//加载自定义插件
+import Installer from '@/plugins/installer'
+Vue.use(Installer);

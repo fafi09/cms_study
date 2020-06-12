@@ -15,6 +15,12 @@ import '../static/css/global.css'
 import Axios from 'axios'
 Vue.prototype.$axios = Axios;
 Axios.defaults.baseURL = '';
+
+//加载自定义插件
+import Installer from '@/plugins/installer'
+Vue.use(Installer);
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
